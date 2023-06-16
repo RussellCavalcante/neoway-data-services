@@ -2,7 +2,6 @@ from sqlalchemy.future import select
 from sqlalchemy import delete , text
 
 from database.models import ArquiveProcess
-from database.connection import async_session
 from database.connection import engine
 
 

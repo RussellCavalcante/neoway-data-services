@@ -1,10 +1,10 @@
-FROM python:3.11-slim
+FROM python:3.11
 
 # Copia os arquivos de requisitos para o diretório de trabalho
-COPY requirements.txt /
+COPY . /app
 
 # Define o diretório de trabalho dentro do contêiner
-WORKDIR /
+WORKDIR /app
 
 # Update package lists and install dependencies
 RUN apt-get update && apt-get upgrade -y
@@ -12,6 +12,7 @@ RUN apt-get install -y build-essential libpq-dev
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python ./init_db.py
 
 # Copy the rest of the application code
 COPY . .
