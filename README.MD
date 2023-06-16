@@ -30,5 +30,11 @@ Certifique-se de ter o Docker instalado em seu sistema antes de prosseguir. Voc�
     Finalmente, para executar o serviço neoway-data-services, use o seguinte comando:
     docker run neoway-data-services
 
+    caso o serviço nao suba , execute:
+    pip install -r requirements.txt
+
+    python init_db.py
+    python server.py
+
 4 **Em seguida verificar os dados extraidos para o banco**
     Verifique os dados no banco !!
